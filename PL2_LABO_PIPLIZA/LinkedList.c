@@ -610,6 +610,17 @@ LinkedList* ll_map(LinkedList* this, void (*fn)(void* pElement))
     }
     return mapList;
 }
+
+
+
+
+
+
+
+
+
+
+
 ////////
 ///
 ///

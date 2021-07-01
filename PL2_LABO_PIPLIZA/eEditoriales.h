@@ -16,8 +16,8 @@ eLibros* new();
 eLibros* setters(char* var_1,char* var_2, char* var_3, char* var_4, char* var_5);
 
 void mapPrecio(void* this);
-int show(eLibros* this);
-int getters(eLibros* this, int* var_1, char* var_2, char* var_3, float* var_4, char* var_5);
+int  mostrarLibros(eLibros* this);
+int  getters(eLibros* this, int* var_1, char* var_2, char* var_3, float* var_4, char* var_5);
 
 int setId(eLibros* this,int var_1);
 int getId(eLibros* this,int* var_1);

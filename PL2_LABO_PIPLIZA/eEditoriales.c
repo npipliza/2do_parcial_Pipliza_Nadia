@@ -251,7 +251,7 @@ int getPrecio(eLibros* this,float* var_4)
 }
 
 /* ************************************************************************************************************* */
-int show(eLibros* this)
+int mostrarLibros(eLibros* this)
 {
     int retorno = 0;
     int var_1;
@@ -262,7 +262,7 @@ int show(eLibros* this)
 
     if (getters(this, &var_1, var_2, var_3, &var_4, var_5))
     {
-        printf(" %3d | %50s | %20s | $%5.1f | %15s  \n", var_1, var_2, var_3, var_4, var_5);
+        printf(" %3d | %50s  | %20s | $%10.2f | %3s \t\t \n", var_1, var_2, var_3, var_4, var_5);
         retorno = 1;
     }
     return retorno;
@@ -328,7 +328,7 @@ int ordenarPorAutor(void* punteroA, void* punteroB)
 
         getAutor(punteroA, aux_A);
         getAutor(punteroB, aux_B);
-        retorno = strcmp(aux_B, aux_A);
+        retorno = strcmp(aux_A, aux_B);
     }
     return retorno;
 }

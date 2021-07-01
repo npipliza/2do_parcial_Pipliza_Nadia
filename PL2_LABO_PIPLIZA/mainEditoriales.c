@@ -42,7 +42,7 @@ int main()
 			case 2:
 				if (!ll_isEmpty(list))
 				{
-					ll_sort(list, ordenarPorAutor, 0);
+					ll_sort(list, ordenarPorAutor, 1);
 					controller_List(list);
 				}
 				else

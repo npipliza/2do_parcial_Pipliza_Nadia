@@ -15,10 +15,10 @@
 int menuDeOpciones()
 {
     printf("\n\t\t***** MENÚ PRINCIPAL *****\n");
-    printf("\n 1- CARGAR archivo(.csv).");
-    printf("\n 2- LISTAR.");
-    printf("\n 3- MAPEO de Datos.");
-    printf("\n 0- SALIR");
+    printf("\n 1. CARGAR archivo(.csv).");
+    printf("\n 2. LISTAR.");
+    printf("\n 3. MAPEO de Datos.");
+    printf("\n 0. SALIR");
 
     setbuf(stdout, NULL);
 
@@ -83,12 +83,12 @@ int controller_loadFromBinary(char* path, LinkedList* pArrayList)
 int controller_List(LinkedList* pArrayList)
 {
 	printf(" \t\t*********************** LISTADO DE LIBROS DISPONIBLES *********************** \n\n ");
-    printf("  ID |  \t\t\t\t\tTITULO    |  \t\tAUTOR  | PRECIO | EDITORIAL \n\n");
+    printf(" ID |  \t\t\t\t\t TITULO    |  \t\t  AUTOR   |    PRECIO   | EDITORIAL \n\n");
 
     for(int i = 0; i < ll_len(pArrayList); i ++) //Recorro el array de datos
     {
         eLibros* this = (eLibros*)ll_get(pArrayList, i); //Le asigno al puntero eLibros "this" lo que retorna "ll_get()"
-        show(this); //Imprimo los datos
+        mostrarLibros(this); //Imprimo los datos
     }
     printf("\n\n");
     return 1;
@@ -118,7 +118,7 @@ int controller_saveAsText(char* path, LinkedList* pArrayList)
     }
     else
     {
-        printf("\nArchivo No Encontrado\n\n");
+        printf("\nATENCIÓN! Archivo No Encontrado\n\n");
     }
     fclose(text);
     return retorno;
@@ -148,14 +148,14 @@ int controller_saveAsBinary(char* path, LinkedList* pArrayList)
 
             if(datosLeidos != 1)
             {
-                printf("\nError al escribir los datos en el archivo.\n\n");
+                printf("\nATENCIÓN! Error al escribir los datos en el archivo.\n\n");
             }
         }
         printf("\nDatos Guardados Con Exito\n\n");
     }
     else
     {
-        printf("\nNo se pudo acceder al archivo.\n");
+        printf("\n ATENCIÓN! No fue posible acceder al archivo.\n");
     }
     fclose(pArchivo);
     return retorno;
